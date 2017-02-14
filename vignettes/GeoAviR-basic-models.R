@@ -17,15 +17,17 @@ x<-distance.wrap(alcids, SMP_EFFORT="WatchLenKm",DISTANCE="Distance",SIZE="Count
                  path="c:/temp/distance",
                  pathMCDS="C:/Distance 6",verbose=FALSE)
 
-## ------------------------------------------------------------------------
+## ----warning=FALSE,message=FALSE,fig.height=5,fig.width=5,fig.align='center'----
 x
-####summary of one of the best model
-summary(x[[5]])
+####summary of one model
+summary(x[[2]])
+predicted_hist(x[[2]])
 
-## ------------------------------------------------------------------------
+## ----warning=FALSE,message=FALSE,fig.height=5,fig.width=5,fig.align='center'----
 ##### Keep the 'best' model in the list
 x.best <- keep.best.model(x)
 summary(x.best)
+predicted_hist(x.best)
 
 ## ----warning=FALSE,message=FALSE-----------------------------------------
 library(GeoAviR)
@@ -49,11 +51,9 @@ x<-distance.wrap(alcids,SMP_EFFORT="WatchLenKm",DISTANCE="Distance",SIZE="Count"
 x
 summary(x[[2]])
 
-## ----warning=FALSE,message=FALSE-----------------------------------------
+## ----warning=FALSE,message=FALSE,fig.height=5,fig.width=5,fig.align='center'----
 ##### Keep the 'best' model in the list
 x.best <- keep.best.model(x)
 summary(x.best)
-
-#predicted_hist(x.best)
-
+predicted_hist(x.best)
 

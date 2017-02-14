@@ -1,4 +1,4 @@
-## ----warning=FALSE,message=FALSE-----------------------------------------
+## ----warning=FALSE,message=FALSE,fig.height=5,fig.width=5,fig.align='center'----
 library(GeoAviR)
 
 ### Import and filter data
@@ -19,8 +19,12 @@ x<-distance.wrap(d,SMP_EFFORT="WatchLenKm",DISTANCE="Distance",SIZE="Count",
                  path="c:/temp/distance",
                  pathMCDS="C:/Distance 6",verbose=FALSE)
 x
+#output for the Great Black-backed Gull 
+summary(x[[2]])
+predicted_hist(x[[2]])
 ##output for the Herring gull
-summary(x[[3]])
+summary(x[[1]])
+predicted_hist(x[[1]])
 
 
 ## ----warning=FALSE,message=FALSE-----------------------------------------
